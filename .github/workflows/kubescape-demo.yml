@@ -30,4 +30,4 @@ jobs:
       - name: Scan YAML files
         run: |
           echo "Running kubescape scan"
-          kubescape scan framework nsa $(ls *.yaml)
+          kubescape scan
