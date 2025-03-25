@@ -22,5 +22,12 @@ jobs:
       - name: Verify kubescape installation
         run: kubescape version
 
-      - name: Scan Yaml files
-        run: kubescape scan framework nsa *.yaml  
+      - name: List YAML files
+        run: |
+          echo "Listing YAML files in the current directory:"
+          ls *.yaml
+
+      - name: Scan YAML files
+        run: |
+          echo "Running kubescape scan"
+          kubescape scan framework nsa $(ls *.yaml)
